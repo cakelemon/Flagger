@@ -1,0 +1,28 @@
+//reference text
+//case 'char', meet RoboName, catch FlagName, always
+//make RoboName, jump Integer, print "string", print_char, put FlagName, destroy, end_program
+
+robo main {
+	flag f1, f2, f3
+	always {
+		put f1
+	}
+	case '$' {
+		jump -1
+	}
+	case '%' {
+		 end_program
+	}
+	catch f1 {
+		put f2
+		jump 1
+	}
+	catch f2 {
+		jump -1
+		put f3
+		print_char
+	}
+	catch f3 {
+		jump -1
+	}
+}
